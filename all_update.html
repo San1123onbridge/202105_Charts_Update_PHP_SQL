@@ -1,0 +1,323 @@
+<html>
+
+<head>
+    <title>HeavyPower - Updating</title>
+    <meta name="viewpoint" charset="UTF-8" content="width=device-width, initial-scale=1">
+    <link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/global.css" rel="stylesheet">
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--native js-->
+    <script src="./js/all_update.js"></script>
+
+    <script type="text/php" src="./php/sma_testing.php"></script>
+</head>
+
+<body>
+    <!-- navbar start -->
+
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Heavypower</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Charting</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="all_updating.html">Updating</a>
+                        </li>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- navbar end -->
+
+    <!-- banner start -->
+
+    <div class="container">
+        <div class="main">
+            <h1>Updating</h1>
+        </div>
+    </div>
+
+    <!-- banner end-->
+    <div class="container">
+        <div class="main" style="width: 200px;">
+            <div class="form-group">
+                <input type="button" class="btn btn-primary" value="to single updating"
+                    onclick="location.href='select_updating.html'">
+            </div>
+        </div>
+    </div>
+    <!-- form start -->
+    <div class="container">
+    <form class="main" method="post" action="./php/all_update.php">
+        <div class="container">
+            <div class="main" style="width: 200px; float: left;">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Date</label>
+                    <input id="input_date" class="form-control" placeholder="example. 202101" value="" name="date_com">
+                    <p id="in_date_msg" style="color: red;"></p>
+                </div>
+            </div>            
+        </div>
+
+        <!-- CJ_COPPER -->
+        <div class="container">
+            <!-- item -->
+            <div class="item_title">
+                <h1>長江銅 (RMB/MT)</h1>
+            </div>
+            <!-- Pricce -->
+            <div class="main">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Price</label>
+                    <input class="form-control" placeholder="" name="CJ_COPPER" value = 0>
+                </div>
+            </div>
+        </div>
+
+        <!-- LON_COPPER -->
+        <div class="container">
+            <!-- item -->
+            <div class="item_title">
+                <h1>倫敦銅 (USD/MT)</h1>
+            </div>
+            <!-- Pricce -->
+            <div class="main">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Price</label>
+                    <input class="form-control" placeholder=""
+                    name="LON_COPPER" value = 0>
+                </div>
+            </div>
+        </div>
+
+        <!-- CJ_ALU -->
+        <div class="container">
+            <!-- item -->
+            <div class="item_title">
+                <h1>長江鋁 (RMB/MT)</h1>
+            </div>
+            <!-- Pricce -->
+            <div class="main">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Price</label>
+                    <input class="form-control" placeholder="" name="CJ_ALU" value = 0>
+                </div>
+            </div>
+        </div>
+
+        <!-- CJ_ZINC -->
+        <div class="container">
+            <!-- item -->
+            <div class="item_title">
+                <h1>長江鋅 (RMB/MT)</h1>
+            </div>
+            <!-- Pricce -->
+            <div class="main">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Price</label>
+                    <input class="form-control" placeholder="" name="CJ_ZINC" value = 0>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- HOT_RSS -->
+        <div class="container">
+            <!-- item -->
+            <div class="item_title">
+                <h1>熱軋版 (NTD/MT)</h1>
+            </div>
+            <!-- Pricce -->
+            <div class="main">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Price</label>
+                    <input class="form-control" placeholder="" name="HOT_RSS" value = 0>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SCREW -->
+        <div class="container">
+            <!-- item -->
+            <div class="item_title">
+                <h1>螺絲線材 (RMB/MT)</h1>
+            </div>
+            <!-- Pricce -->
+            <div class="main">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Price</label>
+                    <input class="form-control" placeholder="" name="SCREW" value = 0>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SPRING -->
+        <div class="container">
+            <!-- item -->
+            <div class="item_title">
+                <h1>彈簧線材 (RMB/MT)</h1>
+            </div>
+            <!-- Pricce -->
+            <div class="main">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Price</label>
+                    <input class="form-control" placeholder="" name="SPRING" value = 0>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PA -->
+        <div class="container">
+            <!-- item -->
+            <div class="item_title">
+                <h1>PA6 (USD/MT)</h1>
+            </div>
+            <!-- Pricce -->
+            <div class="main">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Price</label>
+                    <input class="form-control" placeholder="" name="PA" value = 0>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PP -->
+        <div class="container">
+            <!-- item -->
+            <div class="item_title">
+                <h1>PP料 (USD/MT)</h1>
+            </div>
+            <!-- Pricce -->
+            <div class="main">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Price</label>
+                    <input class="form-control" placeholder="" name="PP" value = 0>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- LON_NICKEL -->
+        <div class="container">
+            <!-- item -->
+            <div class="item_title">
+                <h1>倫敦鎳 (USD/MT)</h1>
+            </div>
+            <!-- Pricce -->
+            <div class="main">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Price</label>
+                    <input class="form-control" placeholder="" name="LON_NICKEL" value = 0>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- NY_BASEOIL -->
+        <div class="container">
+            <!-- item -->
+            <div class="item_title">
+                <h1>紐約原油 (USD/MT)</h1>
+            </div>
+            <!-- Pricce -->
+            <div class="main">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Price</label>
+                    <input class="form-control" placeholder="" name="NY_BASEOIL" value = 0>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- GOLD -->
+        <div class="container">
+            <!-- item -->
+            <div class="item_title">
+                <h1>黃金 (NTD/CHAN)</h1>
+            </div>
+            <!-- Pricce -->
+            <div class="main">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Price</label>
+                    <input class="form-control" placeholder="" name="GOLD" value = 0>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- US_NEWHOUSE -->
+        <div class="container">
+            <div class="main" style="width: 600px; float: left;">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Date</label>
+                    <input id="us_date" class="form-control" placeholder="example. 202101" value="" name="date_us">                    
+                    <p style="color: red;">假如美國新屋不需更新，Date和Price請填入0</p>
+                    <p id="us_date_msg" style="color: red;"></p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- item -->
+            <div class="item_title">
+                <h1>美國新屋開工 (USD/MT)</h1>
+            </div>
+            <!-- Pricce -->
+            <div class="main">
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="form-label mt-4">Price</label>
+                    <input class="form-control" placeholder="" name="US_NEWHOUSE" value = 0>
+                </div>
+            </div>
+
+        </div>
+        <!-- form end -->
+
+        <!-- form_button start-->
+
+        <div class="container">
+            <div class="main">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-lg btn-primary" type="submit">Submit</button>
+                    <input type="hidden" name="decide" value="<? echo $_SESSION['decide']; ?>">
+                </div>
+            </div>            
+        </div>
+    </form>
+    </div>
+    <!-- from_button end -->
+
+    <!-- updating_msg area start -->
+
+    <div class="msg_ctrl">
+        <div class="container">
+            <div class="msg_area">
+                <p>msg area</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- updating_msg area end -->
+</body>
+
+</html>

@@ -1,0 +1,280 @@
+<html>
+
+<head>
+    <title>HeavyPower - Charting</title>
+    <meta name="viewpoint" charset="UTF-8" content="width=device-width, initial-scale=1">
+    <link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/global.css" rel="stylesheet">
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--highcharts function-->
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <!--native js-->
+    <script src="./js/search_index.js"></script>
+</head>
+
+<body>
+    <!-- navbar start -->
+
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Heavypower</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">charts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="all_updating.html">update</a>
+                        </li>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- navbar end -->
+
+    <!-- banner start -->
+
+    <div class="container">
+        <div class="main">
+            <h1>futures price</h1>
+        </div>
+    </div>
+
+    <!-- banner end -->
+
+    <!-- form start -->
+    <form method="post" action="./php/search_index.php" id="main_item">
+        <div class="form_ctrl">
+            <div class="container" style="width: 800px;">
+                <div class="main">
+                    <!-- item -->
+                    <div class="form-group">
+                        <label for="exampleSelect1" class="form-label mt-4">項目</label>
+                        <select class="form-select" name="item_sel">
+                            <option value="CJ_COPPER">長江銅</option>
+                            <option value="LON_COPPER">倫敦銅</option>
+                            <option value="CJ_ALU">長江鋁</option>
+                            <option value="CJ_ZINC">長江鋅</option>
+                            <option value="HOT_RSS">熱軋版</option>
+                            <option value="SCREW">螺絲線材</option>
+                            <option value="SPRING">彈簧線材</option>
+                            <option value="PA">PA6</option>
+                            <option value="PP">PP料</option>
+                            <option value="LON_NICKEL">倫敦鎳</option>
+                            <option value="NY_BASEOIL">紐約原油</option>
+                            <option value="GOLD">黃金</option>
+                            <option value="US_NEWHOUSE">美國新屋開工率</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="main">
+                    <!-- stanard year -->
+                    <div class="form-group">
+                        <label for="exampleSelect1" class="form-label mt-4">基準年</label>
+                        <select class="form-select" id="exampleSelect1" name="year_sel">
+                            <option id="year" value="2021">2021</option>
+                            <option id="year" value="2020">2020</option>
+                            <option id="year" value="2019">2019</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- form_button start -->
+        <div class="container">
+            <div class="main">
+                <input type="button" value="送出" class="btn btn-primary" onclick="search_ajax()">
+                <input type="button" value="所有圖表 (2021)" class="btn btn-primary" onclick="all_ajax()">
+            </div>
+        </div>
+    </form>
+
+    <!-- form_button end -->
+    <!-- form end-->
+
+    <!-- input_msg area start -->
+
+    <div class="msg_ctrl" id="msg_ctrl">
+        <div class="container">
+            <div class="msg_area" id="msg_area">
+                <p>msg area</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- input_msg area end -->
+
+    <!-- output charting area start -->
+
+    <div class="CJ_COPPER_fram" id="CJ_COPPER_fram">
+        <div class="container">
+            <h2 class="main_title">長江銅</h2>
+        </div>
+        <div class="container">
+            <div class="main_charts" id="CJ_COPPER">
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="LON_COPPER_fram" id="LON_COPPER_fram">
+        <div class="container">
+            <h2 class="main_title">倫敦銅</h2>
+        </div>
+        <div class="container">
+            <div class="main_charts" id="LON_COPPER">
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="CJ_ALU_fram" id="CJ_ALU_fram">
+        <div class="container">
+            <h2 class="main_title">長江鋁</h2>
+        </div>
+        <div class="container">
+            <div class="main_charts" id="CJ_ALU">
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+   
+    <div class="CJ_ZINC_fram" id="CJ_ZINC_fram">
+        <div class="container">
+            <h2 class="main_title">長江鋅</h2>
+        </div>
+        <div class="container">
+            <div class="main_charts" id="CJ_ZINC">
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+    <div class="HOT_RSS_fram" id="HOT_RSS_fram">
+        <div class="container">
+            <h2 class="main_title">熱軋版</h2>
+        </div>
+        <div class="container">
+            <div class="main_charts" id="HOT_RSS">
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="SCREW_fram" id="SCREW_fram">
+        <div class="container">
+            <h2 class="main_title">螺絲線材</h2>
+        </div>
+        <div class="container">
+            <div class="main_charts" id="SCREW">
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="SPRING_fram" id="SPRING_fram">
+        <div class="container">
+            <h2 class="main_title">彈簧線材</h2>
+        </div>
+        <div class="container">
+            <div class="main_charts" id="SPRING">
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="PA_fram" id="PA_fram">
+        <div class="container">
+            <h2 class="main_title">PA</h2>
+        </div>
+        <div class="container">
+            <div class="main_charts" id="PA">
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="PP_fram" id="PP_fram">
+        <div class="container">
+            <h2 class="main_title">PP</h2>
+        </div>
+        <div class="container">
+            <div class="main_charts" id="PP">
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <div class="LON_NICKEL_fram" id="LON_NICKEL_fram">
+        <div class="container">
+            <h2 class="main_title">倫敦鎳</h2>
+        </div>
+        <div class="container">
+            <div class="main_charts" id="LON_NICKEL">
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="NY_BASEOIL_fram" id="NY_BASEOIL_fram">
+        <div class="container">
+            <h2 class="main_title">紐約原油</h2>
+        </div>
+        <div class="container">
+            <div class="main_charts" id="NY_BASEOIL">
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="GOLD_fram" id="GOLD_fram">
+        <div class="container">
+            <h2 class="main_title">黃金</h2>
+        </div>
+        <div class="container">
+            <div class="main_charts" id="GOLD">
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="US_NEWHOUSE_fram" id="US_NEWHOUSE_fram">
+        <div class="container">
+            <h2 class="main_title">美國新屋開工</h2>
+        </div>
+        <div class="container">
+            <div class="main_charts" id="US_NEWHOUSE">
+                <p>test</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- output charting area end -->
+
+</body>
+
+</html>

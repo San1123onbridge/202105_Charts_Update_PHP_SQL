@@ -1,0 +1,116 @@
+.container {        
+    max-width:  100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {    
+    width: 1000px;
+    height: 100px;
+    display: block;
+    text-align: center;
+    margin: 30px;
+}
+
+.main_charts {    
+    width: 1200px;
+    height: 550px;
+    display: block;
+    text-align: center;
+    margin: 30px;    
+}
+
+.main_title {
+    width: 1000px;
+    height: 10px;
+    display: block;
+    text-align: center;
+    margin: 30px;    
+}
+
+.msg_area {    
+    width: 1000px;
+    height: 30px;
+    display: block;
+    text-align: center;
+    margin: 30px;
+    color: red;
+}
+
+.msg_ctrl {
+    display: none;
+}
+
+.item_title {
+    width: 1000px;
+    height: 50px;
+    display: block;
+    text-align: center;
+    margin: 30px;
+    padding: 40px 0 0 0 ;    
+}
+
+input {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+.CJ_ALU_fram {
+    display: none;
+}
+
+.CJ_COPPER_fram {
+    display: none;
+}
+
+.CJ_ZINC_fram {
+    display: none;
+}
+
+.GOLD_fram {
+    display: none;
+}
+
+.HOT_RSS_fram {
+    display: none;
+}
+
+.LON_COPPER_fram {
+    display: none;
+}
+
+.LON_NICKEL_fram {
+    display: none;
+}
+
+.NY_BASEOIL_fram {
+    display: none;
+}
+
+.PA_fram {
+    display: none;
+}
+
+.PP_fram {
+    display: none;
+}
+
+.SCREW_fram {
+    display: none;
+}
+
+.SPRING_fram {
+    display: none;
+}
+
+.US_NEWHOUSE_fram {
+    display: none;
+}
+
