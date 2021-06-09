@@ -61,7 +61,6 @@ input {
 
 
 
-
 .CJ_ALU_fram {
     display: none;
 }
@@ -76,6 +75,7 @@ input {
 
 .GOLD_fram {
     display: none;
+    text-align: left;
 }
 
 .HOT_RSS_fram {
