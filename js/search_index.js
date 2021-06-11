@@ -48,7 +48,7 @@ function search_ajax() {
             //console.log(item_title);
             var data = make_attr(temp_data, item_title);
             controller(data);
-
+            //alert("hey its working.");
         }
     })
 }

@@ -1,0 +1,205 @@
+<html>
+
+<head>
+    <title>HeavyPower - Charting</title>
+    <meta name="viewpoint" charset="UTF-8" content="width=device-width, initial-scale=1">
+    <link href="./bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/global.css" rel="stylesheet">
+    <!--jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--native js-->
+    <script src="./js/single_update.js"></script>
+</head>
+
+<body>
+    <!-- navbar start -->
+
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Heavypower</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Charting</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="all_update.html">Updating</a>
+                        </li>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- navbar end -->
+
+    <!-- banner start -->
+
+    <div class="container">
+        <div class="main">
+            <h1>Single Updating</h1>
+        </div>
+    </div>
+
+    <!-- banner end-->
+
+    <!-- selector start-->
+    <div class="container" style="margin-bottom: 10%;">
+        <div class="main">
+            <form method="POST" id="show_table_form">
+                <div class="container">
+                    <div class="main" style="width: 500px;">
+                        <!-- item -->
+                        <label for="exampleSelect1" class="form-label mt-4">Item</label>
+                        <select class="form-select" name="show_sel">
+                            <option value="CJ_COPPER">長江銅</option>
+                            <option value="LON_COPPER">倫敦銅</option>
+                            <option value="CJ_ALU">長江鋁</option>
+                            <option value="CJ_ZINC">長江鋅</option>
+                            <option value="HOT_RSS">熱軋版</option>
+                            <option value="SCREW">螺絲線材</option>
+                            <option value="SPRING">彈簧線材</option>
+                            <option value="PA">PA6</option>
+                            <option value="PP">PP料</option>
+                            <option value="LON_NICKEL">倫敦鎳</option>
+                            <option value="NY_BASEOIL">紐約原油</option>
+                            <option value="GOLD">黃金</option>
+                            <option value="US_NEWHOUSE">美國新屋開工率</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="main" style="height: 20px;">
+                        <div style="color: red;">
+                            <p>showing the latest five in database.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="main">
+                        <input type="button" value="send" class="btn btn-primary" onclick="show_table()">
+                    </div>
+                </div>
+            </form>
+                <!-- msg area start -->
+
+                <div class="container" style="display: none; " id="msg_area">
+                    <h1 id="item_title">$title</h1>
+                    <table class='table table-hover' id="item_output">
+                        <thead>
+                            <tr>
+                                <th scope='col'>ID</th>
+                                <th scope='col'>Date</th>
+                                <th scope='col'>Week_price</th>
+                                <th scope='col'>Currency</th>
+                                <th scope='col'>SMA_month</th>
+                                <th scope='col'>SMA_year</th>
+                                <th scope='col'>Timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data1">
+                            
+                        </tbody>
+                        <tbody id="data2">
+                            
+                        </tbody>
+                        <tbody id="data3">
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- msg area end -->
+
+                <!-- single update start -->
+                <div class="container">
+                    <div class="main">
+                        <form method="POST" id="single_update_form">
+                            <div class="container">
+                                <div class="main" style="width: 200px; float: left;">
+                                    <!-- item -->
+                                    <label for="exampleSelect1" class="form-label mt-4">Item</label>
+                                    <select class="form-select" name="item_sel_update">
+                                        <option value="CJ_ALU">CJ_ALU</option>
+                                        <option value="CJ_COPPER">CJ_COPPER</option>
+                                        <option value="CJ_ZINC">CJ_ZINC</option>
+                                        <option value="GOLD">GOLD</option>
+                                        <option value="HOT_RSS">HOT_RSS</option>
+                                        <option value="LON_COPPER">LON_COPPER</option>
+                                        <option value="LON_NICKEL">LON_NICKEL</option>
+                                        <option value="NY_BASEOIL">NY_BASEOIL</option>
+                                        <option value="PA">PA</option>
+                                        <option value="PP">PP</option>
+                                        <option value="SCREW">SCREW</option>
+                                        <option value="SPRING">SPRING</option>
+                                        <option value="US_NEWHOUSE">US_NEWHOUSE</option>
+                                    </select>
+                                </div>
+                                <div class="main" style="width: 200px; float: left;">
+                                    <label for="exampleInputPassword1" class="form-label mt-4">Date</label>
+                                    <input class="form-control" placeholder="ex. 202105" name="item_date">
+                                </div>
+                                <div class="main" style="width: 200px; float: left;">
+                                    <label for="exampleInputPassword1" class="form-label mt-4">Week_Price</label>
+                                    <input class="form-control" placeholder="" name="item_price">
+                                </div>
+                                
+                            </div>
+                            <div class="container">
+                                <div class="main">
+                                    <input type="button" value="update" class="btn btn-primary" onclick="single_update()">
+                                </div>
+                            </div>
+                            <div class="container" style="display: none; " id="msg_area2">
+                                <h1 id="item_title2">$title</h1>
+                                <table class='table table-hover' id="item_output">
+                                    <thead>
+                                        <tr>
+                                            <th scope='col'>ID</th>
+                                            <th scope='col'>Date</th>
+                                            <th scope='col'>Week_price</th>
+                                            <th scope='col'>Currency</th>
+                                            <th scope='col'>SMA_month</th>
+                                            <th scope='col'>SMA_year</th>
+                                            <th scope='col'>Timestamp</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="datau1">
+                                                                              
+                                    </tbody> 
+                                </table>
+                                <div class="main">
+                                    
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- single update end -->
+
+            </form>
+        </div>
+    </div>
+
+
+    <!-- selector end -->
+
+
+
+    
+</body>
+
+
+</html>

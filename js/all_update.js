@@ -1,26 +1,4 @@
-$(document).ready(function(){   
-    $.ajax({
-        url: "./php/check_date.php",
-        dataType: "json",
-        type: "get",
-        data: "a=1",
-        async: false,
-        error: function (jqXHR, textStatus, errorThrown) {
-            console.log(jqXHR);
-            console.log(textStatus);
-            console.log(errorThrown);
-        },
-
-        success: function (data) {
-           console.log(data);
-           controller(data);
-        }
-
-    })    
-})
-
-/* will be back
-$(document).ready(function(){   
+$(document).ready(function(){    
     $.ajax({
         url: "./php/check_date.php",
         dataType: "json",
@@ -39,17 +17,7 @@ $(document).ready(function(){
 
         }
     })
-    
 })
-*/
-
-function show_data(data){
-    var result = new Array();
-    for(var i = 0 ; i < data.length ; i++){
-        result.push(data[i]);
-    }
-    return result;
-}
 
 function controller(data){
     var date = def_date(data);
@@ -59,7 +27,7 @@ function controller(data){
 
 function def_date(data){
     var data_arr = data;
-    console.log(data_arr);
+
     //date1 for common item, date2 for us_newhouse
     var date1, 
         date2;
@@ -76,7 +44,7 @@ function def_date(data){
     }
     
     var result = new Array();
-    result.push(date1,date2);    
+    result.push(date1,date2);
     return result;    
 }
 
@@ -94,8 +62,8 @@ function msg_ctr(date){
     //tar1 for common item msg area, tar2 for us_nh item
     var tar1 = document.getElementById("in_date_msg"),
         tar2 = document.getElementById("us_date_msg");
-    msg_com = "The price of " + date[0] + " is NuLL in db now.",
-    msg_us = "The price of " + date[1] + " is NuLL in db now.";
+    msg_com = "The price of " + date[0] + " is NuLL in db now."
+    msg_us = "The price of " + date[1] + " is NuLL in db now."
     err = "Something wrong. Stop and call manager pls.";
     if(!isNaN(date[0]) && !isNaN(date[1])){
         tar1.innerHTML = msg_com;

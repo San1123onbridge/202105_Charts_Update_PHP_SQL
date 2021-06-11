@@ -253,8 +253,13 @@ function com_update($arr){
 	for($i = 0; $i < count($arr); $i++){
 		array_push($data, $arr[$i]);
 	}
+    if($data[0] == "US_NEWHOUSE"){
+        $t_query = "UPDATE $data[0] SET Week_price = $data[2], Currency = '$data[3]', SMA_season = $data[4], SMA_year = $data[5] WHERE Date = $data[1]";
+    }else{
+        $t_query = "UPDATE $data[0] SET Week_price = $data[2], Currency = '$data[3]', SMA_month = $data[4], SMA_year = $data[5] WHERE Date = $data[1]";
+    }
 	//					item					  item_p			                            sma_m				
-	$t_query = "UPDATE $data[0] SET Week_price = $data[2], Currency = '$data[3]', SMA_month = $data[4], SMA_year = $data[5] WHERE Date = $data[1]";
+	//$t_query = "UPDATE $data[0] SET Week_price = $data[2], Currency = '$data[3]', SMA_month = $data[4], SMA_year = $data[5] WHERE Date = $data[1]";
 	$query = $t_query;
 	//echo $query . "<br>";
 	$stmt = $db_pdo->prepare($query);
@@ -326,124 +331,7 @@ function get_section($t, $arr1, $arr2, $arr3){
     return $section;
 }
     
-   
 
 
-
-/*
-
-    
-
-    $table = "
-    <html>
-
-    <head>
-        <title>HeavyPower - Updating</title>
-        <meta name='viewpoint' charset='UTF-8' content='width=device-width, initial-scale=1'>
-        <link href='../bootstrap/bootstrap.min.css' rel='stylesheet'>
-        <link href='../css/global.css' rel='stylesheet'>
-    </head>
-
-    <body>
-        <!-- navbar start -->
-
-        <div>
-            <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
-                <div class='container-fluid'>
-                    <a class='navbar-brand' href='#'>Heavypower</a>
-                    <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarColor01'
-                        aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation'>
-                        <span class='navbar-toggler-icon'></span>
-                    </button>
-
-                    <div class='collapse navbar-collapse' id='navbarColor01'>
-                        <ul class='navbar-nav me-auto'>
-                            <li class='nav-item'>
-                                <a class='nav-link' href='index.html'>Charting</a>
-                            </li>
-                            <li class='nav-item'>
-                                <a class='nav-link active' href='all_updating.html'>Updating</a>
-                            </li>
-                            </li>
-                        </ul>
-                        <form class='d-flex'>
-                            <input class='form-control me-sm-2' type='text' placeholder='Search'>
-                            <button class='btn btn-secondary my-2 my-sm-0' type='submit'>Search</button>
-                        </form>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
-        <!-- navbar end -->
-
-        <!-- banner start -->
-
-        <div class='container'>
-            <div class='main'>
-                <h1>Result</h1>
-            </div>
-        </div>
-        <div class='container'>
-            <div class='main'>
-                <h1>CJ_COPPER</h1>
-                <table class='table table-hover'>
-                    <thead>
-                        <tr>
-                            <th scope='col'>ID</th>
-                            <th scope='col'>Date</th>
-                            <th scope='col'>Week_price</th>
-                            <th scope='col'>Currency</th>
-                            <th scope='col'>SMA_month</th>
-                            <th scope='col'>SMA_year</th>
-                            <th scope='col'>Timestamp</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class='table-danger'>
-                            <th scope='row'>input result</th>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class='table-active'>
-                            <th scope='row'>history</th>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                        <tr class='table-primary'>
-                            <th scope='row'>histroy</th>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                            <td>Column content</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-
-        <!-- banner end-->
-
-    </body>
-
-    </html>
-        ";
-
-
-
-    echo "$table";
-
-*/
     
 ?>

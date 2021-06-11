@@ -74,9 +74,14 @@
     com_update($result);
 
 
+    $t_query = "SELECT * FROM $item WHERE Date > 202100 AND Week_PRICE is not null order by ID desc limit 1";
+    $query = $t_query;
+    $stmt = $db_pdo->prepare($query);
+    $stmt->execute();
 
-    $result = json_encode($result);
-    echo $result;
+    $rows = $stmt->fetchAll(PDO::FETCH_NUM);
+    $result_query = json_encode($rows);
+    echo $result_query;
 
     
 

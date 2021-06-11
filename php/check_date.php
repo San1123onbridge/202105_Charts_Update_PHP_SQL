@@ -1,8 +1,8 @@
 <?php
     require_once('config.php');
 
-    $query1 = "SELECT Date FROM CJ_COPPER_TEST WHERE Date > 202100 AND Week_price is not NuLL order by Date desc limit 1";
-    $query2 = "SELECT Date FROM US_NEWHOUSE_TEST WHERE Date > 202100 AND Week_price is not NuLL order by Date desc limit 1";
+    $query1 = "SELECT Date FROM CJ_COPPER WHERE Date > 202100 AND Week_price is not NuLL order by Date desc limit 1";
+    $query2 = "SELECT Date FROM US_NEWHOUSE WHERE Date > 202100 AND Week_price is not NuLL order by Date desc limit 1";
 
     $stmt = $db_pdo->prepare($query1);
     $stmt->execute();    
